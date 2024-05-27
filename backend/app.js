@@ -24,8 +24,10 @@ app.use(cookieParser());
 // cors
 app.use(
   cors({
-    origin: ["https://amit-final-project.vercel.app",
-    //  process.env.ORIGIN
+    origin: [
+      "https://amit-final-project-oxhk.vercel.app",
+      // "https://amit-final-project.vercel.app",
+      //  process.env.ORIGIN
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
