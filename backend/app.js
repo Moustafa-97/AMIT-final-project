@@ -50,6 +50,14 @@ if (process.env.NODE_ENV === "production") {
       path.join(__dirname, "frontend", "build", "index.html")
     );
   });
+} else {
+  app.use("/admin", AdminRoutes);
+  app.use("/user", UserRoutes);
+  app.get("/", (req, res) => {
+    res.send("server is ready");
+  });
+  app.use(notFound);
+  app.use(errorHandler);
 }
 
 connectDB();
