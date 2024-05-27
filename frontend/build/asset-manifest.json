@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7ad7e0b7.css",
-    "main.js": "/static/js/main.1d4c43b6.js",
+    "main.js": "/static/js/main.b6190747.js",
     "static/media/httpsi.ibb.cob2HGV9Zbg.png": "/static/media/httpsi.ibb.cob2HGV9Zbg.254f3a4aa867cceee06f.png",
     "static/media/image 111.png": "/static/media/image 111.ae88e00a3ba53fd8e0d6.png",
     "static/media/mid-shot-chef-holding-plate-with-pasta-making-ok-sign 1.png": "/static/media/mid-shot-chef-holding-plate-with-pasta-making-ok-sign 1.1ffe34729a6030f4e357.png",
@@ -13,10 +13,10 @@
     "static/media/Mask group.png": "/static/media/Mask group.7511f7908b3443805348.png",
     "index.html": "/index.html",
     "main.7ad7e0b7.css.map": "/static/css/main.7ad7e0b7.css.map",
-    "main.1d4c43b6.js.map": "/static/js/main.1d4c43b6.js.map"
+    "main.b6190747.js.map": "/static/js/main.b6190747.js.map"
   },
   "entrypoints": [
     "static/css/main.7ad7e0b7.css",
-    "static/js/main.1d4c43b6.js"
+    "static/js/main.b6190747.js"
   ]
 }
