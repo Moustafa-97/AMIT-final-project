@@ -24,7 +24,7 @@ app.use(cookieParser());
 // cors
 app.use(
   cors({
-    origin: ["https://amit-final-project.onrender.com", process.env.ORIGIN],
+    origin: ["https://amit-final-project.onrender.com","https://amit-final-project-bistro.vercel.app", process.env.ORIGIN],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     optionSuccessStatus: 200,
