@@ -10,6 +10,7 @@ import AddItems from "../Pages/MainPages/ForAdmins/AddItems";
 import EditItems from "../Pages/MainPages/ForAdmins/EditItems";
 import Manage from "../Pages/MainPages/ForAdmins/Manage";
 import AddTables from "../Pages/MainPages/ForAdmins/AddTables";
+import EditTables from "../Pages/MainPages/ForAdmins/EditTables";
 export default function Admins() {
   return (
     <>
@@ -20,7 +21,7 @@ export default function Admins() {
           <Route path="/addItem" element={<AddItems />} />
           <Route path="/addTable" element={<AddTables />} />
           <Route path="/editItem:id" element={<EditItems />} />
-          <Route path="/editItem:id" element={<EditItems />} />
+          <Route path="/editTable:id" element={<EditTables />} />
           <Route path="/manage" element={<Manage />} />
           {/* <Route path="/rawItems" element={<RawItems />} /> */}
           <Route path="/orders" element={<Orders />} />

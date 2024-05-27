@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FaBirthdayCake, FaIceCream, FaWater } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
 import { MdOutlineFreeBreakfast } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 
 export default function Card(props: object | any) {
   const [icon, setIcon] = useState(<FaIceCream />);

@@ -11,17 +11,6 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 function App() {
-  // const { theme, mode } = useThemeContext();
-  // localStorage.setItem("mymode", mode);
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-  // if (
-  //   mode === "dark" ||
-  //   (!mode && window.matchMedia(`(prefers-color-scheme: ${mode})`).matches)
-  // ) {
-  //   document.documentElement.classList.add("dark");
-  // } else {
-  //   document.documentElement.classList.remove("dark");
-  // }
 
   return (
     <div className="App">

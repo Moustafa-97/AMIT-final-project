@@ -4,6 +4,7 @@ import RedBtn from "../../buttons/RedBtn";
 import axios from "axios";
 import { userData } from "../../../../../Redux/reduxTools/HandleUserLogin";
 import NotLogged from "../../NotLogged/NotLogged";
+// import { useNavigate } from "react-router-dom";
 const menuPic = require("./img/images.png");
 
 interface itemDetails {
@@ -20,6 +21,7 @@ interface userOrder {
 export default function MenuSingleItem(props: any) {
   const dispatch = useDispatch();
   const item = props.item;
+  
 
   const user: string = useSelector(
     (state: any) => state.Login.user.user?.account
@@ -91,7 +93,7 @@ export default function MenuSingleItem(props: any) {
                     {item.itemName}
                   </h2>
                   <p className=" leading-7 text-[16px]">
-                    {item.ItemDescription}
+                    {item.itemDescription}
                   </p>
                 </header>
                 <div className="h-[15%] flex justify-center items-center">
@@ -100,7 +102,7 @@ export default function MenuSingleItem(props: any) {
                       <RedBtn
                         name="Edit"
                         isFunction={false}
-                        link={`/admin/editItem/${item._id}`}
+                        link={`/editItem/${item._id}`}
                       />
                       <RedBtn
                         name="Remove"

@@ -41,9 +41,9 @@ export default function Header() {
       )}
       <div className="w-full h-[55px] py-8 lg:flex hidden items-center justify-center lg:gap-[251px] bg-white">
         <div className="w-1/3 flex items-center justify-center">
-          <div className=" lg:w-full lg:h-full">
-            <img src={logo} alt="logo" />
-          </div>
+          <Link to="/" className=" lg:w-full lg:h-full ms-5">
+            <img src={logo} alt="logo" className="h-full w-full"/>
+          </Link>
         </div>
         <div className="w-1/3">
           <ul className=" list-none flex items-center justify-center lg:w-[120%] lg:h-[32px] w-full h-full lg:gap-[8px] rounded-[34px]">
@@ -125,9 +125,9 @@ export default function Header() {
           />
         </div>
       </div>
-      <div className="relative w-full lg:h-[55px] h-fit py-8 flex lg:hidden items-center justify-center lg:gap-[251px] bg-white">
+      <div className="relative w-full lg:h-[55px] h-fit py-8 px-2 flex lg:hidden items-center justify-between bg-white">
         <div
-          className="relative z-50 w-1/3 h-full text-center m-auto "
+          className="relative z-50 w-1/4 h-full text-center m-auto "
           onClick={() => setOpen(!open)}
         >
           =
@@ -202,11 +202,11 @@ export default function Header() {
           </>
         )}
 
-        <div className="lg:h-[38.67px] w-1/3 h-full">
+        <Link to='/' className="lg:h-[38.67px] w-2/4 h-full mx-10">
           <img src={logo} alt="logo" />
-        </div>
+        </Link>
 
-        <div className="w-1/3" onClick={handleBook}>
+        <div className="w-1/4" onClick={handleBook}>
           <WhiteBtnMenu
             name="book a table"
             class="hover:bg-[#DBDFD04e]"

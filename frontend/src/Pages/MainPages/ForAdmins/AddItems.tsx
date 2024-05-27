@@ -24,7 +24,7 @@ interface NewItem {
 }
 
 export default function AddItems() {
-  const categories = ["pizza", "pasta", "dessert", "kids"];
+  const categories = ["select","pizza", "pasta", "dessert", "kids"];
   const [newItem, setnewItem] = useState<NewItem>({
     itemName: "",
     itemDescription: "",

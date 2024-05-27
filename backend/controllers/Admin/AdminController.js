@@ -169,12 +169,12 @@ module.exports.admin_update_item = asyncHandler(async (req, res, next) => {
   const itemId = req.body._id;
   const itemToUpdate = await oneItem.findById({ _id: itemId });
   if (itemToUpdate) {
-    itemToUpdate.itemName = req.body.itemName || itemToUpdate.itemName;
+    itemToUpdate.itemName = req.body.data.itemName || itemToUpdate.itemName;
     itemToUpdate.itemDescription =
-      req.body.itemDescription || itemToUpdate.itemDescription;
-    itemToUpdate.image = req.body.image || itemToUpdate.image;
+      req.body.data.itemDescription || itemToUpdate.itemDescription;
+    itemToUpdate.image = req.body.data.image || itemToUpdate.image;
     itemToUpdate.itemQuantities =
-      req.body.itemQuantities || itemToUpdate.itemQuantities;
+      req.body.data.itemQuantities || itemToUpdate.itemQuantities;
 
     const updatedItem = await itemToUpdate.save();
     res.status(200).json(updatedItem);

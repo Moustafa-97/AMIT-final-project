@@ -5,11 +5,11 @@ import Content from "../components/Content/Content";
 
 export default function HomePage() {
   return (
-    <div className="overflow-x-hidden">
-      <div className="relative w-screen lg:h-[951px] h-fit">
+    <div className="overflow-hidden">
+      <div className="relative w-screen lg:h-[951px] h-screen overflow-hidden mb-0 bg-cover">
         <Hero />
       </div>
-      <div className=" flex flex-col justify-center items-center m-auto w-full lg:h-[712px] h-fit">
+      <div className=" flex flex-col justify-center items-center m-auto w-full h-fit">
         <Menu />
       </div>
       <div className=" m-auto w-full lg:h-[867px] h-fit">

@@ -12,7 +12,7 @@ interface NewItem {
 
 export default function EditTables() {
   const id = useParams();
-  console.log(id.id);
+
   const [newItem, setnewItem] = useState<NewItem>({
     itemName: "",
     itemDescription: "",
@@ -38,7 +38,8 @@ export default function EditTables() {
     const { itemName, itemDescription, price, category } = newItem;
     if (itemName && itemDescription && price && category) {
       axios
-        .put(`${process.env.REACT_APP_SERVER_DOMAIN}/admin/addTable`, {
+        .put(`${process.env.REACT_APP_SERVER_DOMAIN}/admin/updateTable`, {
+          id: id.id,
           data: newItem,
         })
         .then((res) => {

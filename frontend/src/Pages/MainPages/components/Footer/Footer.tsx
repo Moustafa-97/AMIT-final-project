@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex items-start justify-start gap-[120px] lg:w-1/3 w-full m-auto mt-0 lg:flex-nowrap flex-wrap">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 m-auto items-start w-full">
             <h3 className=" leading-[24px] text-[16px] text-[#fff]">Pages</h3>
             <ul className="flex flex-col gap-5 text-[#DBDFD0]">
               <li>Home</li>
@@ -46,7 +46,7 @@ export default function Footer() {
               <li>Delivery</li>
             </ul>
           </div>
-          <div className="flex flex-col items-start m-auto gap-10">
+          <div className="flex flex-col items-start m-auto gap-10 w-full">
             <h3 className=" leading-[24px] text-[16px] text-[#fff]">
               Utility Pages
             </h3>
@@ -62,18 +62,18 @@ export default function Footer() {
           </div>
         </div>
         <div className="lg:w-1/3 w-full m-auto mt-0">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 w-full">
             <h3 className=" leading-[24px] text-[16px] text-[#fff]">
               Follow Us on instagram
             </h3>
-            <div className="flex flex-col gap-[15px]">
+            <div className="flex flex-col gap-[15px] w-full">
               <div className="flex gap-[15px] w-full h-full m-auto">
-                <img className="w-full h-full m-auto bg-cover overflow-hidden" src={grp0} alt="1"/>
-                <img className="w-full h-full m-auto bg-cover overflow-hidden" src={grp1} alt="1"/>
+                <img className="w-full h-full m-auto overflow-hidden" src={grp0} alt="1"/>
+                <img className="w-full h-full m-auto overflow-hidden" src={grp1} alt="1"/>
               </div>
               <div className="flex gap-[15px] w-full h-full m-auto">
-                <img className="w-full h-full m-auto bg-cover overflow-hidden" src={grp2} alt="1"/>
-                <img className="w-full h-full m-auto bg-cover overflow-hidden" src={grp3} alt="1"/>
+                <img className="w-full h-full m-auto overflow-hidden" src={grp2} alt="1"/>
+                <img className="w-full h-full m-auto overflow-hidden" src={grp3} alt="1"/>
               </div>
             </div>
           </div>
