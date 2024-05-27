@@ -338,8 +338,8 @@ module.exports.user_confirm_order = asyncHandler(async (req, res, next) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.ORIGIN}/success`,
-      cancel_url: `${process.env.ORIGIN}/fail`,
+      success_url: `${process.env.ORIGIN_DEPLOY}/success`,
+      cancel_url: `${process.env.ORIGIN_DEPLOY}/fail`,
     });
     //
     //end paymen
