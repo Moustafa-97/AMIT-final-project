@@ -25,7 +25,6 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      // "https://amit-final-project.vercel.app",
        process.env.ORIGIN_DEPLOY,
        process.env.ORIGIN,
     ],
@@ -54,14 +53,6 @@ if (process.env.NODE_ENV === "production") {
       path.join(__dirname, "frontend", "build", "index.html")
     );
   });
-} else {
-  app.use("/admin", AdminRoutes);
-  app.use("/user", UserRoutes);
-  app.get("/", (req, res) => {
-    res.send("server is ready");
-  });
-  app.use(notFound);
-  app.use(errorHandler);
 }
 
 connectDB();
