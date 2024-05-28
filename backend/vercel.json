@@ -4,7 +4,7 @@
       "src": "./app.js",
       "use": "@vercel/node",
       "config": {
-        "distDir": "/frontend/build"
+        "distDir": "../frontend/build/index.html"
       }
     }
   ],
@@ -13,8 +13,5 @@
       "src": "/(.*)",
       "dest": "/frontend/build"
     }
-  ],
-  "redirects": [
-    { "source": "/(.*)", "destination": "../frontend/build/index.html" }
   ]
 }
