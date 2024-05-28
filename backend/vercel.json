@@ -13,5 +13,8 @@
       "src": "/(.*)",
       "dest": "/frontend/build"
     }
+  ],
+  "redirects": [
+    { "source": "/frontend", "destination": "/frontend/build/index.html", "permanent": false }
   ]
 }
