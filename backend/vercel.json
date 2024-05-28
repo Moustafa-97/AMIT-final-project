@@ -11,8 +11,5 @@
       "src": "/(.*)",
       "dest": "app.js"
     }
-  ],
-  "redirects": [
-    { "source": "/frontend", "destination": "/frontend/build/index.html", "permanent": true }
   ]
 }
