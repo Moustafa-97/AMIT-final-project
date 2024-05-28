@@ -3,15 +3,12 @@
     {
       "src": "./app.js",
       "use": "@vercel/node",
-      "config": {
-        "distDir": "../frontend/build/index.html"
-      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/frontend/build"
+      "dest": "../frontend/build/index.html"
     }
   ]
 }

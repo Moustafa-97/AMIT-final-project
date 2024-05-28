@@ -31,6 +31,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     optionSuccessStatus: 200,
+    
     // for cookies::
     credentials: true,
   })
