@@ -10,6 +10,9 @@
     "dev": "nodemon app.js"
   },
   "author": "",
+  "engines": {
+    "node": "20.7.0"
+  },
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
