@@ -15,6 +15,6 @@
     }
   ],
   "redirects": [
-    { "source": "/(.*)", "destination": "/frontend/build/index.html" }
+    { "source": "/(.*)", "destination": "../frontend/build/index.html" }
   ]
 }
