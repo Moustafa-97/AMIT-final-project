@@ -1,17 +1,16 @@
 {
-    "builds":[
-        {
-            "src":"./app.js",
-            "use":"@vercel/node",
-            "config": {
-              "distDir": "../frontend/build"
-            }
-        }
-    ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"app.js"
-        }
-    ]
+  "builds": [
+    {
+      "src": "./app.js",
+      "use": "@vercel/node",
+
+      "dist": "../frontend/build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.js"
+    }
+  ]
 }
