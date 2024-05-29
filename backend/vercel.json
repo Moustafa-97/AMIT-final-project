@@ -5,17 +5,5 @@
       "source": "/(.*)",
       "destination": "/api"
     }
-  ],
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
   ]
 }
