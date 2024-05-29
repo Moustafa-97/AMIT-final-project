@@ -33,7 +33,7 @@ app.use(
   })
 );
 
-// if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   // const __dirname = path.resolve("../");
   // app.use(express.static(path.join(__dirname + "/frontend/public")));
 
@@ -45,12 +45,13 @@ app.use(
   app.use(notFound);
   app.use(errorHandler);
 
-  // app.get("*", (req, res, next) => {
-  //   return res.sendFile(
-  //     path.join(__dirname, "frontend", "public", "index.html")
-  //   );
-   // });
-// }
+  app.get("*", (req, res, next) => {
+    // return res.sendFile(
+    //   path.join(__dirname, "frontend", "public", "index.html")
+    // );
+    res.send("hello")
+   });
+}
 
 connectDB();
 mongoose.set("strictQuery", false);
