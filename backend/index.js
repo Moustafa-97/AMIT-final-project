@@ -34,8 +34,8 @@ app.use(
 );
 
 if (process.env.NODE_ENV === "production") {
-  // const __dirname = path.resolve("../");
-  // app.use(express.static(path.join(__dirname + "/frontend/public")));
+  const __dirname = path.resolve("../");
+  app.use(express.static(path.join(__dirname + "/frontend/public")));
   app.use("/admin", AdminRoutes);
   app.use("/user", UserRoutes);
   app.get("/", (req, res) => {
@@ -43,11 +43,11 @@ if (process.env.NODE_ENV === "production") {
   });
   app.use(notFound);
   app.use(errorHandler);
-  // app.get("*", (req, res, next) => {
-  //   return res.sendFile(
-  //     path.join(__dirname, "frontend", "public", "index.html")
-  //   );
-  // });
+  app.get("*", (req, res, next) => {
+    return res.sendFile(
+      path.join(__dirname, "frontend", "public", "index.html")
+    );
+  });
 }
 
 connectDB();
