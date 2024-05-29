@@ -5,7 +5,7 @@ const { admin } = require("../models/Admin/AdminModel");
 
 const requireAdminAuth = asyncHandler(async (req, res, next) => {
 
-  const token = req.cookies[process.env.ADMIN_TOKEN];
+  const token = await req.cookies[process.env.ADMIN_TOKEN];
 
   if (token) {
     try {
