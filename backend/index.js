@@ -8,11 +8,11 @@ const cookieParser = require("cookie-parser");
 
 const bodyParser = require("body-parser");
 // import routes
-const AdminRoutes = require("../routes/Admin/AdminRoutes.js");
-const UserRoutes = require("../routes/User/UserRoutes.js");
+const AdminRoutes = require("./routes/Admin/AdminRoutes");
+const UserRoutes = require("./routes/User/UserRoutes");
 // import middlewares
-const { notFound, errorHandler } = require("../middleware/ErrorMiddleware.js");
-const { connectDB } = require("../config/db.js");
+const { notFound, errorHandler } = require("./middleware/ErrorMiddleware");
+const { connectDB } = require("./config/db.js");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -33,21 +33,9 @@ app.use(
   })
 );
 
-// if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
 // const __dirname = path.resolve("../");
 // app.use(express.static(path.join(__dirname + "/frontend/build")));
-
-// app.get("*", (req, res, next) => {
-//   return res.sendFile(
-//     path.join(__dirname, "frontend", "build", "index.html")
-//   );
-// });
-// }
-
-connectDB();
-mongoose.set("strictQuery", false);
-app.listen(PORT, () => console.log(`started on ${PORT}`));
-
 app.use("/admin", AdminRoutes);
 app.use("/user", UserRoutes);
 app.get("/", (req, res) => {
@@ -55,3 +43,15 @@ app.get("/", (req, res) => {
 });
 app.use(notFound);
 app.use(errorHandler);
+// app.get("*", (req, res, next) => {
+//   return res.sendFile(
+//     path.join(__dirname, "frontend", "build", "index.html")
+//   );
+// });
+}
+
+connectDB();
+mongoose.set("strictQuery", false);
+app.listen(PORT, () => console.log(`started on ${PORT}`));
+
+
