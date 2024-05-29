@@ -35,7 +35,7 @@ app.use(
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve("../");
-  app.use(express.static(path.join(__dirname + "/frontend/public")));
+  app.use(express.static(path.join(__dirname + "/frontend/build")));
   app.use("/admin", AdminRoutes);
   app.use("/user", UserRoutes);
   app.get("/", (req, res) => {
@@ -45,7 +45,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(errorHandler);
   app.get("*", (req, res, next) => {
     return res.sendFile(
-      path.join(__dirname, "frontend", "public", "index.html")
+      path.join(__dirname, "frontend", "build", "index.html")
     );
   });
 }
