@@ -8,11 +8,11 @@ const cookieParser = require("cookie-parser");
 
 const bodyParser = require("body-parser");
 // import routes
-const AdminRoutes = require("./routes/Admin/AdminRoutes.js");
-const UserRoutes = require("./routes/User/UserRoutes.js");
+const AdminRoutes = require("../routes/Admin/AdminRoutes.js");
+const UserRoutes = require("../routes/User/UserRoutes.js");
 // import middlewares
-const { notFound, errorHandler } = require("./middleware/ErrorMiddleware.js");
-const { connectDB } = require("./config/db.js");
+const { notFound, errorHandler } = require("../middleware/ErrorMiddleware.js");
+const { connectDB } = require("../config/db.js");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
