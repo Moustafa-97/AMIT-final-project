@@ -10,7 +10,6 @@ coverage
 # production
 node_modules/
 # misc
-.env
 vercel.json
 
 

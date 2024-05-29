@@ -34,24 +34,22 @@ app.use(
 );
 
 if (process.env.NODE_ENV === "production") {
-const __dirname = path.resolve("../");
-app.use(express.static(path.join(__dirname + "/frontend/public")));
-app.use("/admin", AdminRoutes);
-app.use("/user", UserRoutes);
-app.get("/", (req, res) => {
-  res.send("server is ready");
-});
-app.use(notFound);
-app.use(errorHandler);
-app.get("*", (req, res, next) => {
-  return res.sendFile(
-    path.join(__dirname, "frontend", "public", "index.html")
-  );
-});
+  // const __dirname = path.resolve("../");
+  // app.use(express.static(path.join(__dirname + "/frontend/public")));
+  app.use("/admin", AdminRoutes);
+  app.use("/user", UserRoutes);
+  app.get("/", (req, res) => {
+    res.send("server is ready");
+  });
+  app.use(notFound);
+  app.use(errorHandler);
+  // app.get("*", (req, res, next) => {
+  //   return res.sendFile(
+  //     path.join(__dirname, "frontend", "public", "index.html")
+  //   );
+  // });
 }
 
 connectDB();
 mongoose.set("strictQuery", false);
 app.listen(PORT, () => console.log(`started on ${PORT}`));
-
-
