@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import CartCard from "../components/Cart/CartCard";
 import RedBtn from "../components/buttons/RedBtn";

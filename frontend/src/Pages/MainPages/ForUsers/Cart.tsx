@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CartManageSection } from "../../../Redux/reduxTools/CartManageHandler";
 import ItemsCart from "../components/Cart/ItemsCart";
