@@ -346,7 +346,7 @@ module.exports.user_confirm_order = asyncHandler(async (req, res, next) => {
     //
 
     try {
-      if (session.id) {
+      if (await session.id) {
         const darr = await order.create({
           orderDetails,
           totalPrice: session.amount_total / 100,
@@ -355,8 +355,8 @@ module.exports.user_confirm_order = asyncHandler(async (req, res, next) => {
         });
 
         res.status(200).json({
-          url: session.url,
-          session: session,
+          url: await session.url,
+          session: await session,
           message: "Checkedout",
         });
       }
