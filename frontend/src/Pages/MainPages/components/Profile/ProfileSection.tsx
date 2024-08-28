@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { imageToPage64 } from "../../../../Assign/imagetopage64";
+import { imageToBase64 } from "../../../../Assign/imageToBase64";
 import axios from "axios";
 import { userData } from "../../../../Redux/reduxTools/HandleUserLogin";
 const userPic = require("./img/user.png");
@@ -36,7 +36,7 @@ export default function ProfileSection() {
   const handleInputImage = async (
     e: HTMLImageElement | HTMLInputElement | FormData | any
   ) => {
-    const image = await imageToPage64(e.target.files[0]);
+    const image = await imageToBase64(e.target.files[0]);
     setNewData((pre) => {
       return {
         ...pre,
@@ -107,7 +107,11 @@ export default function ProfileSection() {
                           ? userDetails?.image
                           : newData.image
                         : userDetails?.image
-                      : userPic
+                      : userDetails?.image !== ""
+                      ? newData.image === ""
+                        ? userPic
+                        : newData.image
+                      : userDetails?.image
                   }
                   alt="user profile"
                   className="w-full h-full"

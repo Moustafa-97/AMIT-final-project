@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const { admin } = require("../../models/Admin/AdminModel");
-const {user} = require( "../../models/User/UserModel")
+const { user } = require("../../models/User/UserModel");
 const { oneItem } = require("../../models/Items/ItemModel");
 const { rawItem } = require("../../models/Items/RawModel");
 const { order } = require("../../models/Orders/OrdersModel");
@@ -9,6 +9,7 @@ const { table } = require("../../models/Table/Tables");
 const { tableItem } = require("../../models/Table/TableItem");
 const { GenerateAdminToken } = require("../../utils/generateAdminToken");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const { itemImage } = require("../../models/Items/ImageModel");
 // handle errors
 const handleErrors = (err) => {
   console.log(err.message, err.code, err);
@@ -141,6 +142,7 @@ module.exports.admin_get_item = asyncHandler(async (req, res, next) => {
 // @desc auth admin add item
 // @desc POST /admin/addItem
 // @access Private
+
 module.exports.admin_add_item = asyncHandler(async (req, res, next) => {
   const {
     itemName,
@@ -150,7 +152,7 @@ module.exports.admin_add_item = asyncHandler(async (req, res, next) => {
     category,
     itemQuantities,
   } = req.body.newItem;
-  console.log(req.body.newItem);
+
   await oneItem.create({
     itemName,
     itemDescription,
@@ -159,6 +161,7 @@ module.exports.admin_add_item = asyncHandler(async (req, res, next) => {
     category,
     itemQuantities,
   });
+
   res.status(200).json("add item");
 });
 

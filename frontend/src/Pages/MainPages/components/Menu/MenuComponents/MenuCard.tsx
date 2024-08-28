@@ -7,13 +7,15 @@ export default function MenuCard(props: any) {
     <>
       <div
         onClick={() => navigate(`/Item/${props.id}`)}
-        className="m-auto text-center flex flex-col justify-center items-center gap-[15px] w-full h-full rounded-xl border border-[#DBDFD0] stroke-[100%]"
+        className="m-auto text-center grid grid-cols-1 grid-rows-10 gap-1 w-full h-[50vh] rounded-xl border border-[#DBDFD0] stroke-[100%]"
       >
-        <img
-          className="m-auto bg-cover w-full rounded-t-xl"
-          src={props.image}
-          alt="menu"
-        />
+        <div className=" w-full h-full row-span-7">
+          <img
+            className="m-auto w-full h-full object-cover rounded-t-xl"
+            src={props.image}
+            alt="menu"
+          />
+        </div>
         <p className="m-auto text-[#AD343E] font-bold text-[24px] leading-[30px]">
           ${props.Price}
         </p>

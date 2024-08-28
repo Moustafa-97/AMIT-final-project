@@ -4,6 +4,7 @@ import RedBtn from "../../buttons/RedBtn";
 import axios from "axios";
 import { userData } from "../../../../../Redux/reduxTools/HandleUserLogin";
 import NotLogged from "../../NotLogged/NotLogged";
+import PageLayout from "../../../../Layout/PageLayout";
 // import { useNavigate } from "react-router-dom";
 const menuPic = require("./img/images.png");
 
@@ -21,7 +22,6 @@ interface userOrder {
 export default function MenuSingleItem(props: any) {
   const dispatch = useDispatch();
   const item = props.item;
-  
 
   const user: string = useSelector(
     (state: any) => state.Login.user.user?.account
@@ -74,29 +74,42 @@ export default function MenuSingleItem(props: any) {
       .catch((err) => console.log(err));
   };
 
+  /*
+  flex justify-center items-start 
+              lg:flex-row flex-col
+  */
+
   return (
     <>
-      {userState ? (
-        props.item && (
-          <div className="lg:w-[80%] w-full h-screen m-auto flex justify-center items-center">
-            <div className="flex justify-center items-start m-auto h-[80%] w-full lg:flex-row flex-col">
-              <div className="w-1/2 m-auto mt-0">
-                <img
-                  className=" w-full"
-                  src={item.image === "" ? menuPic : item.image}
-                  alt="foodpic"
-                />
-              </div>
-              <div className="w-1/2 m-auto mt-0 h-full">
-                <header className="flex justify-start items-start flex-col m-auto w-full gap-5 mb-[30px] h-[85%] ">
-                  <h2 className=" font-[playfair] text-[80px] leading-[96px]">
-                    {item.itemName}
-                  </h2>
-                  <p className=" leading-7 text-[16px]">
-                    {item.itemDescription}
-                  </p>
-                </header>
-                <div className="h-[15%] flex justify-center items-center">
+      <PageLayout>
+        {userState ? (
+          props.item && (
+            <div className="lg:w-[80%] w-full h-screen m-auto flex justify-center items-center">
+              <div
+                className="
+               grid grid-cols-5 grid-rows-3 gap-6
+              m-auto h-[75%] 
+              w-full 
+              "
+              >
+                <div className="w-full m-auto  h-full col-span-2 row-span-2 object-cover">
+                  <img
+                    className=" w-full h-full object-cover"
+                    src={item.image === "" ? menuPic : item.image}
+                    alt="foodpic"
+                  />
+                </div>
+                <div className="w-full h-full m-auto col-span-3 row-span-2 ">
+                  <header className="flex justify-start items-start flex-col m-auto w-full gap-5 mb-[30px] h-[85%] ">
+                    <h2 className=" font-[playfair] text-[80px] leading-[96px] capitalize">
+                      {item.itemName}
+                    </h2>
+                    <p className=" leading-7 text-[20px]">
+                      {item.itemDescription}
+                    </p>
+                  </header>
+                </div>
+                <div className=" row-span-1 col-span-5 m-auto w-full h-full">
                   {user === "admin" ? (
                     <div className="flex justify-center items-start m-auto w-full h-full lg:flex-row flex-col">
                       <RedBtn
@@ -112,50 +125,51 @@ export default function MenuSingleItem(props: any) {
                       />
                     </div>
                   ) : (
-                    <div className="flex justify-center items-start m-auto w-full h-full lg:flex-row flex-col">
-                      <form
-                        onSubmit={handleAction}
-                        className="w-full h-full flex justify-center items-center m-auto lg:flex-row flex-col"
-                      >
-                        <div className="lg:w-1/2 w-full h-full m-auto flex justify-center items-center">
-                          <label
-                            className="text-center m-auto"
-                            htmlFor="ItemQuantity"
-                          >
-                            Quantity
-                          </label>
-                          <input
-                            className=" text-[25px] outline-2 border border-slate-300 outline-slate-300 lg:w-1/5 w-1/2 h-[50px] m-auto flex justify-center items-center"
-                            id="ItemQuantity"
-                            type="number"
-                            value={itemQuantity}
-                            min={0}
-                            name="ItemQuantity"
-                            // value={itemQuantity}
-                            onChange={(e: FormEvent<HTMLInputElement> | any) =>
-                              setItemQuantity(e.target.value)
-                            }
-                          />
-                        </div>
-                        <div className="lg:w-1/2 w-full h-full m-auto flex justify-center items-center">
-                          <RedBtn
-                            name="Add to cart"
-                            link="/"
-                            isFunction={true}
-                            function={handleAction}
-                          />
-                        </div>
-                      </form>
+                    <div className="w-full h-full m-auto grid grid-cols-4 grid-rows-1  ">
+                      <div className="w-full h-full m-auto col-start-3 col-span-1 flex items-center justify-center gap-5">
+                        <span className="leading-7 text-[20px] text-center m-auto">Quantity</span>
+                        <button
+                          className=" bg-[#AD343E] px-2 py-0 border-black border-1 rounded-full flex items-center justify-center m-auto"
+                          onClick={() =>
+                            itemQuantity <= 1
+                              ? setItemQuantity(1)
+                              : setItemQuantity(itemQuantity - 1)
+                          }
+                        >
+                          -
+                        </button>
+                        <span className=" bg-white px-4 py-2 border-black border-2 rounded-full">
+                          {itemQuantity}
+                        </span>
+                        <button
+                          className=" bg-[#AD343E] px-2 py-0 border-black border-1 rounded-full flex items-center justify-center m-auto"
+                          onClick={() =>
+                            itemQuantity >= 100
+                              ? setItemQuantity(100)
+                              : setItemQuantity(itemQuantity + 1)
+                          }
+                        >
+                          +
+                        </button>
+                      </div>
+                      <div className="w-full h-full m-auto flex flex-1 items-center justify-center">
+                        <RedBtn
+                          name="Add to cart"
+                          link="/"
+                          isFunction={true}
+                          function={handleAction}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
               </div>
             </div>
-          </div>
-        )
-      ) : (
-        <NotLogged />
-      )}
+          )
+        ) : (
+          <NotLogged />
+        )}
+      </PageLayout>
     </>
   );
 }

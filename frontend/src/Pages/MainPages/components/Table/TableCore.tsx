@@ -64,7 +64,7 @@ export default function TableCore() {
       {usertype === "admin" ? (
         <div className="flex justify-center items-center">
           <div>
-            <div className="flex justify-center items-center flex-col">
+            <div className="flex justify-center items-center flex-col gap-5">
               {tables?.length ? (
                 tables.map((order: string | any) => (
                   <div

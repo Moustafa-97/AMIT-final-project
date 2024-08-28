@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Buffer from "../components/Buffer/Buffer";
+import TableHeader from "../components/Table/TableHeader";
 
 export default function Orders() {
   const usertype = useSelector(
@@ -34,7 +35,6 @@ export default function Orders() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [usertype, orders]);
 
-
   const handleAccept = (e: any) => {
     axios
       .post(`${process.env.REACT_APP_SERVER_DOMAIN}/admin/acceptOrders`, {
@@ -55,14 +55,12 @@ export default function Orders() {
   return (
     <>
       {usertype === "admin" ? (
-        <div className="min-h-screen flex justify-center items-center">
+        <div className="min-h-screen">
           <div>
             <header className="flex justify-center items-center flex-col m-auto lg:w-[35%] text-center gap-5 mb-[50px]">
-              <h2 className="font-[playfair] text-[100px] leading-[96px]">
-                Orders
-              </h2>
+              <TableHeader header="Orders" />
             </header>
-            <div className="flex justify-center items-center flex-col">
+            <div className="flex justify-center items-center flex-col gap-5">
               {orders?.length ? (
                 orders.map((order: string | any) => (
                   <div

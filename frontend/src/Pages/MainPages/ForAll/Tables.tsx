@@ -7,7 +7,7 @@ export default function Tables() {
     <>
       <div className="min-h-screen">
         <header className="flex justify-center items-center flex-col m-auto lg:w-[35%] text-center gap-5 mb-[50px]">
-          <TableHeader/>
+          <TableHeader header="Table" />
         </header>
         <section>
           <TableCore/>

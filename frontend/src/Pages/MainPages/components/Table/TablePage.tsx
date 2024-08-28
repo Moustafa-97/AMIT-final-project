@@ -6,7 +6,7 @@ export default function TablePage() {
   return (
     <>
       <div>
-        <TableHeader />
+        <TableHeader header="Tables" />
       </div>
       <div>
         <TablePageItems />

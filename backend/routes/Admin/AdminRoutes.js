@@ -30,9 +30,11 @@ const {
   admin_update_table,
   admin_remove_table,
   admin_get_users,
+  admin_add_image,
 } = require("../../controllers/Admin/AdminController");
 const router = express.Router();
 const { requireAdminAuth } = require("../../middleware/authAdminMiddleware");
+const upload = require("../../middleware/upload");
 
 // admin profile routes
 router.post("/isLogged", requireAdminAuth, is_logged);
