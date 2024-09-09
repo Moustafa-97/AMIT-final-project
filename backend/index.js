@@ -44,15 +44,15 @@ if (process.env.NODE_ENV === "production") {
     res.send("server is ready");
   });
   */
-  app.use(notFound);
-  app.use(errorHandler);
+ 
   app.get("*", (req, res, next) => {
     return res.sendFile(
       path.join(__dirname, "frontend", "build", "index.html")
     );
   });
 }
-
+ app.use(notFound);
+  app.use(errorHandler);
 connectDB();
 mongoose.set("strictQuery", false);
 app.listen(PORT, () => console.log(`started on ${PORT}`));
