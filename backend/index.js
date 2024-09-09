@@ -39,10 +39,11 @@ app.use(
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname , "/frontend/build")));
-
+/*
   app.get("/", (req, res) => {
     res.send("server is ready");
   });
+  */
   app.use(notFound);
   app.use(errorHandler);
   app.get("*", (req, res, next) => {
