@@ -33,11 +33,13 @@ app.use(
   })
 );
 
+  app.use("/admin", AdminRoutes);
+  app.use("/user", UserRoutes);
+
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve("../");
   app.use(express.static(path.join(__dirname + "/frontend/build")));
-  app.use("/admin", AdminRoutes);
-  app.use("/user", UserRoutes);
+
   app.get("/", (req, res) => {
     res.send("server is ready");
   });
